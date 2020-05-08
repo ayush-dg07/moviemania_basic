@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= movie.name %></title>
+</head>
+<body> <style> body {background-color: lightseagreen; text-align: center;} h1 {color: blue;} li {border: 1px solid powderblue;padding: 30px;}  </style>
+
+    <h1> <%= movie.name %> </h1>
+    <h3> <%= movie.director %> </h3>
+    <% link2 = `/search?term=${movie.genre}` %> 
+    <a href=<%=link2%> ><%= movie.genre %></a> <br>
+    <br>
+    <textarea name="review" form="rvwform">Write review here</textarea> <br>
+    <% rev = "/movie/"+movie.id %>
+    <form id="rvwform" method = "POST">
+        Rating:
+        1<input type="radio" name="rating" value="1">  
+        2<input type="radio" name="rating" value="2">  
+        3<input type="radio" name="rating" value="3">  
+        4<input type="radio" name="rating" value="4">
+        5<input type="radio" name="rating" value="5"> <br><br>         
+        <input type="submit" value="Post Review">
+    </form>
+      <br>
+      <% if (movie.avgrating) { %>
+        <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Average User Rating: <%= movie.avgrating %>/5</p>
+        
+    <% } %>
+
+      <!-- reviews -->
+      <br><% if(reviews.length==0){ %> No reviews found <% } %> <br><br>
+      <% if (reviews.length >0) { %> Reviews: <br>
+      <ul>
+      <% reviews.forEach(function(item) {%> 
+          <li> <p>
+              <font size="4">"<%= item.review %>"</font> <br>
+              <font size="3">Rating: <%= item.rating %>/5 </font> <br>
+              <font size="2">-<%= item.author %> </font> <br>
+              <% const link=`/review/${item.id}`; %> 
+              <% if(user==item.uid) { %> <font size="2"><a href=<%=link%> >Edit/Delete</font> <% } %></a> <br>
+            </li> </p>
+      <% }); %>  
+      <% } %>
+      </ul>
+    <a href='/'>Back to homepage</a> <br>
+</body>
+</html>

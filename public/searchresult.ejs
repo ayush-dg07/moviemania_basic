@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> body {background-color: lightseagreen; text-align: center;} h1 {color: blue;} p {border: 1px solid powderblue;padding: 30px;}  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results:</title>
+</head>
+<body>
+    Search for a movie <br>
+        <form action="/search">
+            <label for="term">Keyword:</label>
+            <input type="text" name="term"><br><br>
+            <input type="submit" value="Search">
+          </form> 
+        <br><% if(movies.length==0){ %> No Results found <% } %> <br>
+        <% if (movies.length >0) { %> Results: <br> 
+        <ul>
+        <% movies.forEach( function(item) {%>
+            <li> <% link = `/movie/${item.id}` %> 
+                <a href=<%= link %> ><%= item.name %></a> <br>
+                Director: <%= item.director %> <br>
+                Genre: <%= item.genre %> </li>
+        <% }); %>  
+        <% } %>
+    </ul>
+    <a href='/'>Home</a>
+</body>
+</html>

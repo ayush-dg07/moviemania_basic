@@ -1,0 +1,25 @@
+{
+  "name": "moviemania",
+  "version": "1.0.0",
+  "description": "basic draft",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "ayush",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.0",
+    "promise-mysql": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

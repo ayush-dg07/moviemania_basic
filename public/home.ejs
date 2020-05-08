@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style> body {background-color: lightseagreen; text-align: center;} h1 {color: blue;} p {border: 1px solid powderblue;padding: 30px;}  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Welcome, <%= result[0].name %>! <br>
+    Username: <%= result[0].username %> <br>
+    Email : <%= result[0].email %> 
+    <p></p>
+    <a href='/'>Home</a>
+    <p></p>
+    <% if (result1.length >0) { %> Your reviews: <br> 
+        <ul>
+        <% result1.forEach(function(item) {%>
+            <li> 
+                <%= item.name%> : <%= item.review %> 
+                <% link = `/review/${item.rid}` %> 
+                <a href=<%= link %> link>Edit/Delete</a>
+            </li>
+        <% }); %>  
+        <% } %>
+    </ul>
+    <form action="/logout" method="POST">
+        <button>Logout</button>
+    </form>
+</body>
+</html>

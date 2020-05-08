@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Add Movie</title>
+        <meta name="description" content=" if(key) {if(key) {">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>MovieMania</h1>
+        <p>Add a movie: </p>
+        <form action="/addmovie" method="POST">
+            <label for="name">Movie Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="director">Director:</label><br>
+            <input type="text" id="director" name="director" required><br>
+            <label for="genre">Genre:</label><br>
+            <input type="text" id="genre" name="genre" required><br>
+            <input type="submit" value="Submit">
+          </form> 
+          <br><br>
+          <%= msg %> 
+          <br><br>
+          <a href='/'>Back to homepage</a> <br>
+        <script  async defer>
+            
+        </script>
+    </body>
+</html>

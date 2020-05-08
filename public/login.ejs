@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ALogin</title>
+        <meta name="description" content=" if(key) {if(key) {">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <style> body {background-color: lightseagreen; text-align: center;} h1 {color: blue;}p {color: red;} </style>
+        <h1>MovieMania</h1>
+        <p>Login: </p>
+        <form action="/login" method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Login">
+          </form> 
+          <br><br>
+          <%= msg %> 
+          <a href='/register'>Register</a>
+        <script  async defer>
+        </script>
+    </body>
+</html>

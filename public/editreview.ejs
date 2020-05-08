@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4><%= result[0].name %> </h4>
+    <h5> <%= result[0].author %> </h5>
+    <textarea name="review" form="editrvw"><%= result[0].review %> </textarea>
+    <form id="editrvw" method="POST">
+        <input type="hidden" name="_method" value="_post" />
+        Rating:
+        <% const rating=result[0].rating %> 
+        1<input type="radio" name="rating" <% if(rating==1) { %> checked="checked" <% } %>  value="1">  
+        2<input type="radio" name="rating" <% if(rating==2) { %> checked="checked" <% } %> value="2">  
+        3<input type="radio" name="rating" <% if(rating==3) { %> checked="checked" <% } %> value="3">  
+        4<input type="radio" name="rating" <% if(rating==4) { %> checked="checked" <% } %> value="4">
+        5<input type="radio" name="rating" <% if(rating==5) { %> checked="checked" <% } %> value="5"> <br><br>
+        <input type="submit" value="Update">
+    </form>
+    <form method="POST">
+  <input type="hidden" name="_method" value="_delete" />
+  <input type="submit" value="Delete">
+     </form>
+</body>
+</html>

@@ -88,8 +88,8 @@ auth.showUserHomePage = async (req, res) =>
      if(err) throw err;
      sql1 = `select name,reviews.id as rid,review from reviews,movies where reviews.mid=movies.id and reviews.uid=${id}`;
      let err1, result1;
-     if(err1) throw err1;
      [err1, result1] = await to(db.query(sql1));
+     if(err1) throw err1;
      res.render('home',{result, result1});
  }
 
